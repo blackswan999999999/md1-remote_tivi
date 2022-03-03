@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    class Tivi {
+        constructor(channel, volume, status) {
+            this.channel = channel;
+            this.volume = volume;
+            this.status = status;
+        }
+
+        changeChannel(num) {
+            return this.channel = num;
+        }
+
+        volumeUp() {
+            return this.volume++;
+        }
+
+        volumeDown() {
+            return this.volume--;
+        }
+        powerTivi(status){
+            return  this.status=!this.status;
+        }
+
+        getChannel() {
+            return console.log(`Kênh hiện tại là ${this.channel}`)
+        }
+    }
+
+    class Remote {
+        constructor(tivi) {
+            this.tivi = tivi;
+        }
+        addVolume(tivi){
+            this.tivi.volumeUp();
+        }
+        subVolume(tivi){
+            this.tivi.volumeDown();
+        }
+        change (tivi,num){
+            this.tivi.channel=num;
+        }
+        turnOnOff(tivi){
+            return this.tivi.powerTivi();
+        }
+    }
+    // let tivi1=new Tivi(10,20,false);
+    // let remote1 =new Remote(tivi1);
+
+
+</script>
+</html>
